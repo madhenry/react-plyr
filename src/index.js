@@ -140,8 +140,8 @@ class Plyr extends Component {
     this.player = plyr.setup(selector, options)[0];
 
     if (this.player) {
-      this.player.on('ready', () => {
-        this.props.onReady && this.props.onReady();
+      this.player.on('ready', (event) => {
+        this.props.onReady && this.props.onReady(event);
       });
 
       this.player.on('play', () => {
